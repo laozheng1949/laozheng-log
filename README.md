@@ -15,10 +15,6 @@
 - 行内注释使用带 `annotation` 标签的 GitHub Issue
 - 浏览器通过 GitHub 公共 API 读取公开内容，网页中不保存 Token 或密钥
 
-## 隐私与认证
-
-该版本不包含 ChatGPT 登录、Cloudflare D1、管理后台或任何私人数据。文章内容与互动数据均保存在公开 GitHub 仓库中。
-
 ## 本地预览
 
 ```bash
