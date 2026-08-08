@@ -4,8 +4,21 @@
 
 ## 当前文章
 
-- Study Dashboard：Obsidian 学习总览插件的设计与用途
-- TORQUE 动力实验室：互动发动机数字展览的设计与用途
+### Study Dashboard：把学习变成可见的系统
+
+[![Study Dashboard 学习总览概念图](./images/study-dashboard-concept.png)](https://laozheng1949.github.io/laozheng-log/?post=obsidian-study-dashboard)
+
+介绍 Obsidian 学习总览插件的设计动机、复习流程、掌握度证据、本地优先原则与适用场景。
+
+[阅读文章](https://laozheng1949.github.io/laozheng-log/?post=obsidian-study-dashboard) · [查看插件仓库](https://github.com/laozheng1949/obsidian-study-dashboard)
+
+### TORQUE 动力实验室：让机械原理动起来
+
+[![TORQUE 动力实验室发动机剖面主视觉](./images/torque-engine-lab.png)](https://laozheng1949.github.io/laozheng-log/?post=engine-dynamic-visualization)
+
+介绍互动发动机数字展览的设计目标、三种发动机构型、四冲程动画、三维交互与教育价值。
+
+[阅读文章](https://laozheng1949.github.io/laozheng-log/?post=engine-dynamic-visualization) · [查看项目仓库](https://github.com/laozheng1949/engine-dynamic-visualization)
 
 ## 评论与行内注释
 
