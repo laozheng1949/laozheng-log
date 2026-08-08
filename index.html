@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="记录代码、产品与创造。保持好奇，持续构建。" />
+    <meta property="og:title" content="老郑的个人博客" />
+    <meta property="og:description" content="在代码与灵感之间，构建有趣的事。" />
+    <meta property="og:image" content="https://laozheng1949.github.io/laozheng-log/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>老郑的个人博客</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="ambient-orb orb-one"></div>
+      <div class="ambient-orb orb-two"></div>
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="返回博客首页">
+          <span class="brand-mark" aria-hidden="true">Z</span>
+          <span class="brand-name">LAOZHENG.LOG</span>
+          <span class="brand-cursor" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+        <nav class="site-nav">
+          <a href="./#articles">文章</a>
+          <a href="./#about">关于</a>
+          <a class="studio-link" href="https://github.com/laozheng1949" target="_blank" rel="noreferrer"><span>↗</span> GitHub</a>
+        </nav>
+      </header>
+
+      <main id="app"></main>
+
+      <footer class="site-footer">
+        <div><span class="footer-prompt">~/laozheng</span><p>把复杂的事想清楚，把有趣的事做出来。</p></div>
+        <div class="footer-meta"><span>© 2026 老郑</span><a href="https://github.com/laozheng1949" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+      </footer>
+    </div>
+
+    <div class="annotation-drawer" id="annotationDrawer" aria-hidden="true">
+      <section class="annotation-panel" role="dialog" aria-modal="true" aria-labelledby="annotationTitle">
+        <header class="annotation-panel-header"><span id="annotationTitle">INLINE_ANNOTATIONS</span><button type="button" id="closeAnnotation">关闭 ×</button></header>
+        <p class="annotation-context" id="annotationContext"></p>
+        <div class="annotation-list" id="annotationList"></div>
+        <div class="annotation-actions"><small>注释保存在公开 GitHub Issue 中。阅读无需登录，添加或回复必须登录 GitHub。</small><a id="newAnnotation" href="#" target="_blank" rel="noreferrer">登录 GitHub 添加注释 ↗</a></div>
+      </section>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
