@@ -134,6 +134,13 @@
   .annotation-block { padding-right: 0; padding-bottom: 38px; }
   .annotation-tools { top: auto; right: auto; bottom: 4px; left: 0; }
   .annotation-actions { align-items: flex-start; flex-direction: column; }
+  .post-row { grid-template-columns: 34px 1fr 38px; }
+  .post-media { grid-column: 2 / 4; }
+  .post-content { grid-column: 2 / 4; }
+  .post-arrow { display: none; }
+  .project-facts { grid-template-columns: 1fr; }
+  .project-facts div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .project-facts div:last-child { border-bottom: 0; }
 }
 
 * {
@@ -684,12 +691,32 @@ a {
   display: grid;
   align-items: center;
   gap: 28px;
-  grid-template-columns: 44px 1fr 48px;
+  grid-template-columns: 44px minmax(150px, 220px) 1fr 48px;
   padding: 34px 18px 34px 8px;
   border-bottom: 1px solid var(--line);
   transition:
     padding 260ms ease,
     background 260ms ease;
+}
+
+.post-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.post-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.04);
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+.post-row:hover .post-media img {
+  transform: scale(1.035);
+  filter: saturate(1) contrast(1.08);
 }
 
 .post-row::before {
@@ -1371,6 +1398,61 @@ a {
   color: #a2a9a2;
   font-size: 17px;
   line-height: 1.8;
+}
+
+.article-visual {
+  margin: 52px 0 0;
+}
+
+.article-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  box-shadow: 18px 18px 0 rgba(255, 255, 255, 0.018);
+}
+
+.article-visual figcaption {
+  margin-top: 13px;
+  color: #687068;
+  font-family: var(--font-geist-mono);
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 34px;
+  border: 1px solid var(--line);
+}
+
+.project-facts div {
+  padding: 16px 18px;
+  border-right: 1px solid var(--line);
+}
+
+.project-facts div:last-child {
+  border-right: 0;
+}
+
+.project-facts small {
+  display: block;
+  color: #606860;
+  font-family: var(--font-geist-mono);
+  font-size: 8px;
+  letter-spacing: 0.11em;
+}
+
+.project-facts strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--acid);
+  font-family: var(--font-geist-mono);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .article-body {
