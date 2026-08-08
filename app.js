@@ -18,22 +18,35 @@ const posts = [
       { type: "h2", text: "为什么做这个插件" },
       { type: "p", id: "why", text: "使用 Obsidian 的时间越长，笔记越容易散落在课程、项目、日记和资料文件夹中。信息并没有丢失，但学习状态变得不可见：哪些内容正在学习，哪些该复习，哪些已经真正掌握，很难在一个地方回答。" },
       { type: "p", id: "goal", text: "Study Dashboard 的目标，是把 Vault 从文件集合变成学习系统。它不会替代笔记，而是在笔记之上建立状态、优先级、复习节奏和任务视角，让人打开 Obsidian 时能够直接看到今天最值得处理的内容。" },
-      { type: "p", id: "friction", text: "我遇到的真实摩擦并不是“找不到文件”，而是无法判断学习进度。搜索能回答某条知识放在哪里，却不能回答它是否理解、多久没有复习、下一步应该练习什么。这个插件因此从信息检索转向了学习决策。" },
-      { type: "h2", text: "它能做什么" },
-      { type: "list", id: "features", items: ["自动识别文件夹与笔记的学习状态", "用可验证的学习证据跟踪掌握度", "聚合今日待复习、待整理、学习中和核心考点", "整合任务、最近笔记、日历与间隔复习", "允许排除附件、模板和系统目录，减少统计噪声"] },
-      { type: "h2", text: "从打开 Obsidian 到开始学习" },
-      { type: "p", id: "workflow", text: "理想的使用流程非常短：打开 Obsidian，先在总览中查看今天待复习的内容，再处理待整理笔记，最后从“学习中”继续正在推进的主题。完成复习后，根据困难、一般或熟练更新反馈，系统据此调整下一次复习节奏。" },
-      { type: "p", id: "evidence", text: "掌握度不应该只是一个随手填写的百分比。插件更强调证据：能否复述、能否完成练习、能否把知识用于项目。状态变化与复习记录共同构成学习轨迹，让“我好像会了”逐渐变成可以验证的判断。" },
-      { type: "h2", text: "设计原则：渐进，而不是强迫整理" },
-      { type: "p", id: "design", text: "插件把元数据当作学习行为的接口，但不会要求用户先维护一张复杂表格。状态、难度和重要程度可以逐步补充；即使没有完整标注，仪表盘也能从目录结构、笔记活动和任务中给出有用的起点。" },
-      { type: "p", id: "noise", text: "附件、模板、生成图片和系统目录会制造大量统计噪声，因此资源排除不是附属功能，而是保证总览可信的基础。只有真正与学习有关的内容进入统计，进度和复习提醒才有意义。" },
-      { type: "h2", text: "本地优先与隐私边界" },
-      { type: "p", id: "privacy", text: "这是一个本地优先插件。它在当前 Vault 中读取笔记元数据并生成总览，不要求把知识库交给远程服务。个人笔记、附件与运行时 data.json 都不会上传到项目仓库；公开仓库只包含插件代码、样式、清单和使用说明。" },
-      { type: "h2", text: "适合谁，以及还可以走多远" },
-      { type: "p", id: "audience", text: "它适合长期维护课程笔记、研究资料、考试复习或个人知识库的人。如果只是临时记录几条备忘，传统文件列表已经足够；当内容开始跨越数月甚至数年，学习总览才真正体现价值。" },
-      { type: "p", id: "future", text: "后续可以继续完善复习算法、学习证据统计、不同课程模板和数据迁移能力，也可以把“学习状态”扩展成更通用的个人研究工作流。" },
-      { type: "h2", text: "项目用途" },
-      { type: "p", id: "use", html: "它适合希望长期经营个人知识库、课程笔记或研究资料的人。你可以在 <a href=\"https://github.com/laozheng1949/obsidian-study-dashboard\" target=\"_blank\" rel=\"noreferrer\">GitHub 仓库</a> 查看源码和安装文件。" }
+      { type: "p", id: "friction", text: "我遇到的真实摩擦并不是“找不到文件”，而是无法判断学习进度。搜索能回答某条知识放在哪里，却不能回答它是否理解、多久没有复习、下一步应该练习什么。这个插件因此把重点从信息检索转向学习决策。" },
+      { type: "h2", text: "先安装：三个文件就够了" },
+      { type: "list", id: "install", items: ["从 GitHub 仓库下载 main.js、manifest.json 和 styles.css", "在自己的 Vault 中创建 .obsidian/plugins/study-dashboard/ 目录", "把三个文件复制进去，重新启动或重新加载 Obsidian", "前往“设置 → 第三方插件”，启用 Study Dashboard"] },
+      { type: "p", id: "install-tip", text: "如果文件管理器里看不到 .obsidian，需要先开启“显示隐藏文件”。插件目前采用手动安装，不要在社区插件市场里反复搜索它。启用后可点击左侧仪表盘图标，或在命令面板运行“Study Dashboard: 打开学习总览”。" },
+      { type: "h2", text: "第一次使用：先给一篇笔记建立学习状态" },
+      { type: "list", id: "first-note", items: ["打开一篇正在学习的 Markdown 笔记", "打开命令面板，运行“Study Dashboard: 为当前笔记设置学习属性”", "选择学习领域与资料类型，例如“计算机网络 / 课程笔记”", "将学习状态设为“学习中”，优先级按实际情况选择普通、重要或核心", "填写掌握程度；需要复习时再选择“下次复习”日期，最后点击应用"] },
+      { type: "p", id: "property-guide", text: "“学习领域”决定课程分组，“资料类型”区分课程笔记、习题、实验或项目；“核心”优先级会让笔记进入核心考点；下次复习日期到期后，笔记会进入今日待复习。掌握程度用于汇总课程进度，不必追求看起来漂亮的数字，诚实反映当前理解即可。" },
+      { type: "p", id: "quick-organizer", text: "除了命令面板，也可以在文件列表中右键笔记或文件夹，选择“设置学习属性…”。双击文件列表中的笔记、文件夹或已装饰的标签页，会出现快捷面板，可快速切换状态、优先级，并安排今天、明天、3 天后或 7 天后的复习。" },
+      { type: "h2", text: "最关键的一步：如何创建待办" },
+      { type: "p", id: "task-intro", text: "待办不需要在插件里单独创建。你只要在任意未被排除的 Markdown 笔记中写标准复选框，插件就会自动汇总。下面三种写法都有效：" },
+      { type: "code", id: "task-code", text: "- [ ] 完成计算机网络第三章习题\n- [ ] 阅读 Transformer 论文 📅 2026-08-15\n* [ ] 整理操作系统错题 due:: 2026-08-16" },
+      { type: "list", id: "task-rules", items: ["- [ ] 和 * [ ] 都可以，但方括号内必须保留一个空格", "不写日期也会出现在待办汇总，但不会进入日历", "日期支持 📅 YYYY-MM-DD 或 due:: YYYY-MM-DD", "可加入 🔺 或 ⏫ 表示最高优先级、🔼 表示较高、🔽 表示较低", "已经写成 [x] 的任务不会再出现在未完成列表中"] },
+      { type: "p", id: "task-complete", text: "在总览里点击待办文字，会跳回原笔记和对应行；点击右侧完成按钮，插件会把原笔记中的 [ ] 同步改成 [x]，然后将它移出待办列表。因此，仪表盘与笔记正文不会形成两份互相冲突的任务数据。" },
+      { type: "h2", text: "总览上的每个区域怎么用" },
+      { type: "list", id: "dashboard-sections", items: ["顶部统计：查看笔记总数、学习领域、今日待复习和未完成任务", "今日待复习：复习日期已到，或状态为待复习但未填写日期的笔记", "待整理：刚收集、尚未归类或提炼的内容", "学习中：正在推进的课程和主题", "核心考点：优先级被设为核心的笔记", "待办汇总：所有未排除目录中的未完成 Markdown 任务", "日历：集中显示有截止日期的任务、当天修改的笔记和计划复习的内容"] },
+      { type: "p", id: "create-buttons", text: "总览右上角的“新建笔记”会创建一篇包含摘要、正文、关键要点和待办的结构化笔记；如果 Vault 内有 .obsidian/templates/通用文档模板.md，会优先套用它。“今日日记”则会打开或创建当天日记，并兼容 Obsidian 核心日记插件的目录、日期格式和模板。" },
+      { type: "h2", text: "从待整理到已掌握" },
+      { type: "code", id: "status-flow", text: "待整理 → 学习中 → 待复习 → 已掌握" },
+      { type: "p", id: "workflow", text: "新收集的材料先放进待整理；真正开始阅读、做题或实践时改为学习中；完成一轮学习后安排复习日期并进入待复习。打开 Obsidian 时，优先处理今日待复习，再看截止日期最近的待办，最后从学习中选择今天要推进的主题。" },
+      { type: "p", id: "evidence", text: "复习之后不要只凭感觉拖动百分比，而应先尝试复述、做题或应用，再选择“困难、一般、熟练”。困难最短 1 天后再看并增加 3 点掌握度；一般最短 3 天并增加 9 点；熟练最短 7 天并增加 16 点。插件会结合当前间隔安排下一次复习，只有选择熟练且掌握度达到 90 以上，才会自动进入已掌握。" },
+      { type: "h2", text: "文件夹、排除目录与设置" },
+      { type: "p", id: "folders", text: "文件夹可以设置学习领域、颜色和图标，但它的学习状态与掌握程度由内部笔记自动汇总。开启“新文件夹自动添加图标和颜色”后，新目录会按名称智能匹配外观；你不需要为每个文件夹手动维护进度。" },
+      { type: "p", id: "noise", text: "默认排除 .trash、附件、tmp、tools、系统、模板和生成图片。排除目录中的内容不会进入统计、分类、任务和掌握度计算。可在“设置 → Study Dashboard → 排除的文件夹”中用英文逗号修改；待办没出现时，最先检查任务语法和所在目录是否被排除。" },
+      { type: "list", id: "settings", items: ["启动时打开学习总览：决定是否把仪表盘作为 Obsidian 启动主页", "默认归类方式：可选按内容智能分类或按顶层文件夹分组", "最近笔记数量：显示 4–8 条最近笔记", "待办显示数量：显示 6–30 条待办，不影响插件扫描到的任务总数", "快捷归类：可直接为当前打开的笔记设置学习属性"] },
+      { type: "h2", text: "遇到问题先检查这里" },
+      { type: "list", id: "faq", items: ["总览打不开：确认三个插件文件位于正确目录，重新加载 Obsidian，再运行“打开学习总览”命令", "笔记分类不对：智能归类只是推断，使用“为当前笔记设置学习属性”固定学习领域", "待办不显示：确认它在 .md 文件中、写法是 - [ ]、目录未被排除，并点击一次刷新", "修改笔记但掌握度没提高：编辑次数不等于学会，掌握度主要由学习属性和复习反馈更新", "停用插件后笔记不会消失；已经写入 frontmatter 的学习属性也会保留"] },
+      { type: "h2", text: "本地优先与项目用途" },
+      { type: "p", id: "privacy", text: "插件只在当前 Vault 中读取和更新 Markdown 与属性，不要求远程账号，也不会上传个人笔记。公开仓库只包含插件代码、样式、清单和说明，个人附件与本地 data.json 均未包含。" },
+      { type: "p", id: "use", html: "它适合长期维护课程笔记、考试复习、研究资料或个人知识库的人。更完整的安装步骤、属性字段示例与故障排查，可在 <a href=\"https://github.com/laozheng1949/obsidian-study-dashboard#readme\" target=\"_blank\" rel=\"noreferrer\">GitHub README</a> 中查看。" }
     ]
   },
   {
@@ -175,6 +188,7 @@ function renderBlock(post, block) {
   let content;
   if (block.type === "quote") { content = document.createElement("blockquote"); content.textContent = block.text; }
   else if (block.type === "list") { content = document.createElement("ul"); block.items.forEach(value => { const li = document.createElement("li"); li.textContent = value; content.append(li); }); }
+  else if (block.type === "code") { content = document.createElement("pre"); const code = document.createElement("code"); code.textContent = block.text; content.append(code); }
   else { content = document.createElement("p"); if (block.html) content.innerHTML = block.html; else content.textContent = block.text; }
   wrapper.append(content);
   const tools = document.createElement("div"); tools.className = "annotation-tools";

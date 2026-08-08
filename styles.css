@@ -48,6 +48,20 @@
 }
 .article-body-static ul { padding-left: 24px; }
 .article-body-static a { color: var(--acid); border-bottom: 1px solid rgba(198, 255, 74, 0.38); }
+.article-body-static pre {
+  overflow-x: auto;
+  margin: 26px 0;
+  padding: 20px 22px;
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--cyan);
+  background: rgba(9, 12, 16, 0.9);
+  color: #d8f7e7;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre;
+}
+.article-body-static code { font-family: inherit; }
 .article-body-static blockquote {
   margin: 28px 0;
   padding: 20px 24px;
